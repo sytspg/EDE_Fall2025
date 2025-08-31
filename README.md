@@ -1,6 +1,6 @@
 # Environmental Data Exploration - Fall 2025
 ENV 872 - Environmental Data Exploration - Fall 2025  
-Yitong Eric Su
+Yitong Eric Su  
 Nicholas School of the Environment  
 Duke University  
 
