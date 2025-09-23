@@ -3,6 +3,8 @@ title: "Lab 2 - Data Structures in R"
 subtitle: "Environmental Data Analytics"
 author: "John Fay & Luana Lima"
 date: "Fall 2025"
+editor_options: 
+  chunk_output_type: console
 ---
 
 ## Objective
@@ -39,11 +41,13 @@ vector1 <- c(1,2,5.3,6,-2,4) # Vector type: Numeric
 vector1
 class(vector1)
 
-vector2 <- c("one","two","three") # Vector type: 
+vector2 <- c("one","two","three") # Vector type: Character
 vector2
+class(vector2)
 
-vector3 <- c(TRUE,TRUE,TRUE,FALSE,TRUE,FALSE) # Vector type:
+vector3 <- c(TRUE,TRUE,TRUE,FALSE,TRUE,FALSE) # Vector type: Logical
 vector3
+class(vector3)
 ```
 
 ### Vector Operations
@@ -53,25 +57,25 @@ Add comments below to indicate what each operation does.(First answer is provide
 # Returns the 3rd item in the vector
 vector1[3]
 
-#
+# Returns the maximum value in the vector
 max(vector1)
 
-#Create another vector of the values 10 thru 15
+# Create another vector of the values 10 thru 15
 vector4 <- c(10:15)
 
-#
+# Combines vector1 and vector4
 c(vector1, vector4)
 
-#
+# Multiplies the two vectors element by element
 vector1 * vector4
 
-#
+# Multiple each element in the vector by 10
 vector1 * 10
 
-#
+# Convert the elements in the vector to character strings, in upperclass.
 toupper(vector2) 
 
-#
+# Neglect the value of an expression (in this case, logical)
 !vector3
 
 ```
@@ -83,16 +87,18 @@ Find a 5-day forecast of temperatures (Fahrenheit) for Durham, North Carolina. C
 ```{r Vector Exercise}
 
 #Assign to the variable 'temps_F' a vector of high temperatures in F
-
+temps_F <- c(80, 81, 81, 83, 83)
 
 #What is the average of these temperatures 
-
+#The average temperature is 81.6°F.
+the_mean <- mean(temps_F)
 
 #Compute the difference between each temperature and the average calculated above
-
+#-1.6 -0.6 -0.6  1.4  1.4
+the_diff <- temps_F-mean(temps_F)
 
 #Subtract 32 and multiply by 5/9ths to create a vector in Celsius
-
+temps_C <- (temps_F-32)*5/9
 
 ```
 
@@ -103,11 +109,11 @@ Complete the comments below:
 # Matrices ----
 matrix1 <- matrix(1:20, nrow = 5,ncol = 4) # 
 matrix1
-#matrix1 has __ rows and __ columns
+#matrix1 has 5 rows and 4 columns
 
 matrix2 <- matrix(1:20, nrow = 5, ncol = 4, byrow = TRUE) #
 matrix2
-#matrix2 has __ rows and __ columns
+#matrix2 has 5 rows and 4 columns, byrow means the matrix is filled by rows.
 
 matrix3 <- matrix(
   data = 1:20, 
@@ -120,23 +126,24 @@ matrix3 <- matrix(
     )
   ) 
 
+matrix3
 ```
 
 ### Matrix Operations
 Add comments in the code chunk below to indicate type of vectors created and what each operation does.
 ```{r Matrix Operations}
 
-matrix1[4, 1] #
+matrix1[4, 1] #Row4, Col1
 
-matrix1[4,  ] #
+matrix1[4,  ] #Row4
 
-matrix1[ , 3] #
+matrix1[ , 3] #Col3
 
-matrix1[c(12, 14)] #
+matrix1[c(12, 14)] #choose the 12th and the 14th, by col
 
-matrix1[c(12:14)] #
+matrix1[c(12:14)] #choose between the 12th and 14th, by col
 
-matrix1[2:4, 1:3] #
+matrix1[2:4, 1:3] #choose row2-4 and col1-3
 
 #Create a vector of 6 values
 values = c(1, 26, 24, 68, 3, 44)
@@ -163,6 +170,7 @@ matrix4['R2','C1']
 ### Exercise 1b: Matrices
 Compute the mean of column "C2" in matrix4. (Should be 14.5)
 ```{r Matrix Exercise}
+mean(matrix4[ ,2])
 
 ```
 
