@@ -74,10 +74,10 @@ dim(EPAair_PM25_2019)
 
 ```{r questions 3 thru 4}
 #3 Change the date column to be date objects
-EPAair_O3_2018$Date <- as.Date(EPAair_O3_2018$Date, format = "%m/%d/%y")
-EPAair_O3_2019$Date <- as.Date(EPAair_O3_2019$Date, format = "%m/%d/%y")
-EPAair_PM25_2018$Date <- as.Date(EPAair_PM25_2018$Date, format = "%m/%d/%y")
-EPAair_PM25_2019$Date <- as.Date(EPAair_PM25_2019$Date, format = "%m/%d/%y")
+EPAair_O3_2018$Date <- as.Date(EPAair_O3_2018$Date, format = "%m/%d/%Y")
+EPAair_O3_2019$Date <- as.Date(EPAair_O3_2019$Date, format = "%m/%d/%Y")
+EPAair_PM25_2018$Date <- as.Date(EPAair_PM25_2018$Date, format = "%m/%d/%Y")
+EPAair_PM25_2019$Date <- as.Date(EPAair_PM25_2019$Date, format = "%m/%d/%Y")
 
 #4 Select columns
 EPAair_O3_2018_selected <- EPAair_O3_2018 %>% 
