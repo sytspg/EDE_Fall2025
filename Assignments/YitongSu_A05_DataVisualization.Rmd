@@ -200,6 +200,8 @@ p6 <- ggplot(niwo.needles, aes(x = as.factor(collectDate), y = dryMass, color = 
 p6 #view the plot
 
 #7
+niwo.needles$collectDate <- as.Date(
+  niwo.needles$collectDate, format = "%Y-%m-%d")
 
 p7 <- ggplot(niwo.needles, aes(x = as.factor(collectDate), y = dryMass)) +
   geom_boxplot(color = "darkgreen") +
