@@ -49,7 +49,16 @@ Create three plots, each with appropriately formatted axes and legends. Choose a
 ```{r}
 #Exercise 1:
 
+q3.density <-
+  ggplot(EPAair, aes (Ozone, fill = as.factor(Year)))+
+  geom_density(alpha = 0.5)+
+  scale_fill_manual(values = c("darkgreen", "darkblue"))+
+  labs(x = "Ozone AQI value", y = "Density", fill = "")
 
+q3.density
+
+
+  
 ```
 
 ## Linear Regression
