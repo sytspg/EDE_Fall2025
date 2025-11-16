@@ -212,7 +212,7 @@ cary.20182020.df <- bind_rows(cary.20182020.dfs)
 ggplot(cary.20182020.df, aes(x = Date, y = Max_Day_Use_mgd)) + 
   geom_line() + 
   labs(title = paste("2018-20 Max Daily Withdrawal Water Amount in Cary"), 
-       y = "Max Day Use (MGD)", x = "Date", color = "System Name")
+       y = "Max Day Use (MGD)", x = "Date")
 
 ```
 
