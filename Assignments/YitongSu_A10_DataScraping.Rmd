@@ -189,7 +189,7 @@ str(Durham.2020.lwsp)
 ```
 
 
-9. Use the code & function you created above to plot Cary's max daily withdrawal by months for the years 2018 thru 2023.Add a smoothed line to the plot (method = 'loess').
+9. Use the code & function you created above to plot Cary's max daily withdrawal by months for the years 2018 thru 2023. Add a smoothed line to the plot (method = 'loess').
 
 > TIP: See Section 3.2 in the "10_Data_Scraping.Rmd" where we apply "map2()" to iteratively run a function over two inputs. Pipe the output of the map2() function to `bind_rows()` to combine the dataframes into a single one, and use that to construct your plot.
 
@@ -211,6 +211,7 @@ cary.20182020.df <- bind_rows(cary.20182020.dfs)
 
 ggplot(cary.20182020.df, aes(x = Date, y = Max_Day_Use_mgd)) + 
   geom_line() + 
+  geom_smooth(method="loess",se=FALSE) +
   labs(title = paste("2018-20 Max Daily Withdrawal Water Amount in Cary"), 
        y = "Max Day Use (MGD)", x = "Date")
 
@@ -218,5 +219,5 @@ ggplot(cary.20182020.df, aes(x = Date, y = Max_Day_Use_mgd)) +
 
 Question: Just by looking at the plot (i.e. not running statistics), does Cary have a trend in water usage over time?
 
-> Answer: In general, the water usage changed on an annual basis. It rose in early summer and dropped in fall. Though there were some fluctuations, overall the trend was quite stable.
+> Answer: In general, the water usage changed on an annual basis. It rose in early summer and dropped in fall. Though there were some fluctuations, overall the data was quite stable, with a slightly increasing trend.
 >
